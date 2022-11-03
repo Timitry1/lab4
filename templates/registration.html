@@ -8,6 +8,12 @@
 <body>
     <form action="" method="post">
       <p>
+		  {% if erRor %}
+    <p>Введите правильные данные, {{erRor}}! </p>
+    {% endif %}
+        {% if errorLogin %}
+    <p> Такой пользователь уже есть, {{errorLogin}}! </p>
+    {% endif %}
     <label for="name">Your name:</label>
     <input type="text" name="name">
      </p>
@@ -21,6 +27,7 @@
 	</p>
 	<p>
 	    <input type="submit" value="Sign In">
+        <input type="button" onclick="window.location.href = 'http://localhost:5000/login';" value="Sign In"/>
 	</p>
     </form>
 
